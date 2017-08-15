@@ -22,6 +22,8 @@ class ProductController {
 		$requestData = array();
 		$requestData['id'] = $id;
 
+		$result = $this->curlCall($requestData);
+
 		return $app->render('products/product.detail.twig', $result);
 	}
 
