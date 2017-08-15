@@ -68,10 +68,18 @@ class ProductController {
 					$productPrice = array();
 					$productPrice['price'] = $response[$i]['prices'][$j]['sellingPrice'];
 					$productPrice['currency'] = $response[$i]['prices'][$j]['currencyCode'];
+
 					$product['prices'][] = $productPrice;
+
+					/*another cleaner way I would go about in adding the productPrice info to product['prices] would be:
+					$product['prices'][] = array(	'price' 	=> $response[$i]['prices'][$j]['sellingPrice'],
+													'currency' 	=> $response[$i]['prices'][$j]['currencyCode']);
+					*/
 				}
 			}
 			$result[] = $product;
 		}
+
+		return $result;
 	}
 }
