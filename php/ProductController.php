@@ -18,7 +18,7 @@ class ProductController {
 	 * @param $name
 	 * @return
 	 */
-	public function getById_GET(Application $app, $id){
+	public function getById_GET(Application $app, $id) {
 		$requestData = array();
 		$requestData['id'] = $id;
 
@@ -35,7 +35,7 @@ class ProductController {
 	 * @param $name
 	 * @return
 	 */
-	public function getByName_GET(Application $app, $name){
+	public function getByName_GET(Application $app, $name) {
 		$requestData = array();
 		$requestData['names'] = $name;
 
