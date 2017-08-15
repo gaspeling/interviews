@@ -61,18 +61,17 @@ class ProductController {
 		for ($i = 0; $i < count($response); $i++) {
 			$product = array();
 			$product['ean'] = $response[$i]['barcode'];
-			$product["name"] = $response[$i]['itemName'];
-			$product["prices"] = array();
+			$product['name'] = $response[$i]['itemName'];
+			$product['prices'] = array();
 			for ($j = 0; $j < count($response[$i]['prices']); $j++) {
 				if ($response[$i]['prices'][$j]['currencyCode'] != 'ZAR') {
 					$productPrice = array();
 					$productPrice['price'] = $response[$i]['prices'][$j]['sellingPrice'];
 					$productPrice['currency'] = $response[$i]['prices'][$j]['currencyCode'];
-					$product["prices"][] = $productPrice;
+					$product['prices'][] = $productPrice;
 				}
 			}
 			$result[] = $product;
 		}
 	}
-
 }
